@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\wwwroot",
+    "\\wwwroot\\css",
+    "\\wwwroot\\js",
+    "\\wwwroot\\lib",
+    "\\wwwroot\\lib\\bootstrap",
+    "\\wwwroot\\lib\\bootstrap\\dist",
+    "\\wwwroot\\lib\\bootstrap\\dist\\js",
+    "\\wwwroot\\lib\\jquery",
+    "\\wwwroot\\lib\\jquery\\dist"
+  ],
+  "PreviewInSolutionExplorer": false
+}

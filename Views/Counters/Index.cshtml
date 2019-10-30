@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Printercounter.Models.Counter>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Printer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Printer.PrinterBarcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Printer.PrinterSN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaperCounter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TonerLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Counter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DailyPaperConsumption)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Printer.PrinterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Printer.PrinterBarcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Printer.PrinterSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperCounter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TonerLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Counter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DailyPaperConsumption)
+            </td>
+
+
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Printercounter.Models.Printer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterIP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterSN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterBarcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrinterTonerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterIP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterBarcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrinterTonerName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PrinterID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PrinterID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PrinterID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
