@@ -28,6 +28,7 @@ namespace Printercounter.Controllers
                 var applicationDbContext = _context.PrinterCounter
                     .Include(c => c.Printer)
                     .Where(s => s.Date_Counter.Equals(DateTime.Parse(dateList)));
+            ViewBag.dateList = dateList;
 
             return View(await applicationDbContext.ToListAsync());
         }
