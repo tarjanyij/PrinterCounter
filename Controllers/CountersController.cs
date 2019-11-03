@@ -41,9 +41,10 @@ namespace Printercounter.Controllers
                 return NotFound();
             }
 
-            var counter = await _context.PrinterCounter
+            var counter = _context.PrinterCounter
                 .Include(c => c.Printer)
-                .FirstOrDefaultAsync(m => m.CounterID == id);
+                .Where(m => m.PrinterID == id)
+                .OrderByDescending(m =>m.PaperCounter);
             if (counter == null)
             {
                 return NotFound();
@@ -51,7 +52,34 @@ namespace Printercounter.Controllers
 
             return View(counter);
         }
+        
+        public async Task<IActionResult> Montly(int? id, string year, string month)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            if (year == null && month == null)
+            {
+                year = DateTime.Now.ToString("yyyy");
+                month = DateTime.Now.ToString("MM");
+            }
+            var counter = _context.PrinterCounter
+                .Include(c => c.Printer)
+                .Where(m => m.PrinterID == id)
+                .Where(m => m.Date_Counter.Year == Int32.Parse(year))
+                .Where(m => m.Date_Counter.Month == Int32.Parse(month));
+
+           
+                
+            if (counter == null)
+            {
+                return NotFound();
+            }
+
+            return View(counter);
+        }
         // GET: Counters/Create
         public IActionResult Create()
         {
