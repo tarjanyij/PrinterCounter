@@ -13,10 +13,10 @@ namespace Printercounter.Models
         [Key]
         public int CounterID { get; set; }
         public int PrinterID { get; set; }
-        public int PaperCounter { get; set; }
-        public int TonerLevel { get; set; }
+        public int? PaperCounter { get; set; }
+        public int? TonerLevel { get; set; }
         public DateTime Date_Counter { get; set; }
-        public int DailyPaperConsumption { get; set; }
+        public int? DailyPaperConsumption { get; set; }
         public Printer Printer { get; set; }
 
     }
