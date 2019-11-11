@@ -53,7 +53,7 @@ namespace Printercounter.Controllers
             return View(counter);
         }
         
-        public async Task<IActionResult> Montly(int? id, string year, string month)
+        public async Task<IActionResult> Monthly(int? id, string year, string month)
         {
             if (id == null)
             {
@@ -71,13 +71,13 @@ namespace Printercounter.Controllers
                 .Where(m => m.Date_Counter.Year == Int32.Parse(year))
                 .Where(m => m.Date_Counter.Month == Int32.Parse(month));
 
-           
-                
+            
+
             if (counter == null)
             {
                 return NotFound();
             }
-
+           
             return View(counter);
         }
         // GET: Counters/Create
