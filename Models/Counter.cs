@@ -15,6 +15,7 @@ namespace Printercounter.Models
         public int PrinterID { get; set; }
         public int? PaperCounter { get; set; }
         public int? TonerLevel { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date_Counter { get; set; }
         public int? DailyPaperConsumption { get; set; }
         public Printer Printer { get; set; }

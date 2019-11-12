@@ -41,10 +41,10 @@ namespace Printercounter.Controllers
                 return NotFound();
             }
 
-            var counter = _context.PrinterCounter
+            var counter = await (_context.PrinterCounter
                 .Include(c => c.Printer)
                 .Where(m => m.PrinterID == id)
-                .OrderByDescending(m =>m.PaperCounter);
+                .OrderByDescending(m =>m.PaperCounter)).ToListAsync();
             if (counter == null)
             {
                 return NotFound();
@@ -65,11 +65,11 @@ namespace Printercounter.Controllers
                 year = DateTime.Now.ToString("yyyy");
                 month = DateTime.Now.ToString("MM");
             }
-            var counter = _context.PrinterCounter
+            var counter = await( _context.PrinterCounter
                 .Include(c => c.Printer)
                 .Where(m => m.PrinterID == id)
                 .Where(m => m.Date_Counter.Year == Int32.Parse(year))
-                .Where(m => m.Date_Counter.Month == Int32.Parse(month));
+                .Where(m => m.Date_Counter.Month == Int32.Parse(month))).ToListAsync();
 
             
 
