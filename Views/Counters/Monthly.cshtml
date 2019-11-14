@@ -36,26 +36,27 @@
     </dl>
 
 </div>
-<div>
-
-    <a asp-action="Index">Back to List</a><br /><br />
-
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="1">Január</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="2">Február</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="3">Március</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="4">Április</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="5">Május</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="6">Junius</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="7">Július</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="8">Augusztus</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="9">Szeptember</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="10">Oktober</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="11">November</a>
-    <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="12">December</a>
-
+<div class="d-flex">
+    <div class="mr-auto">
+        <a asp-action="Index">Back to List</a>
+    </div>
+    <div class="">
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="1">January</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="2">February</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="3">March</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="4">April</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="5">Maj</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="6">June</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="7">July</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="8">August</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="9">September</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="10">October</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="11">November</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="12">December</a>&nbsp;
+    </div>
 </div>
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="thead-dark">
         <tr>
 
             <th>
@@ -102,10 +103,14 @@
 
 
 @section Scripts{
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://localhost:5001/js/chartinator.js"></script>
-    
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script src="https://localhost:5001/js/chartinator.js"></script>
+     -->
+    <script src="~/lib/jquery/dist/jquery-1.12.4.js"></script>
+    <script src="~/lib/jquery/dist/jquery-ui.js"></script>
+    <script src="~/js/chartinator.js"></script>
+
     <script type="text/javascript">
         jQuery(function ($) {
 
@@ -131,8 +136,8 @@
                             <text>
                     ['@Html.DisplayFor(modelItem => item.Date_Counter)',@Html.DisplayFor(modelItem => item.DailyPaperConsumption)],
                             </text>
-                
-                        } 
+
+                        }
                  //   [' ', 0]
                 ],
                 // The class to apply to the table element

@@ -31,7 +31,6 @@ D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Printercounter.Views.pdb
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Printercounter.dll
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Printercounter.pdb
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Printercounter.csproj.CopyComplete
-D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Printercounter.csprojAssemblyReference.cache
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Printers\Create.cshtml.g.cs
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Printers\Delete.cshtml.g.cs
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Printers\Details.cshtml.g.cs
@@ -44,3 +43,5 @@ D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Counters\Edit.c
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Counters\Index.cshtml.g.cs
 D:\MyPrograms\Printercounter\bin\Debug\netcoreapp2.2\libman.json
 D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Counters\Monthly.cshtml.g.cs
+D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Printercounter.csprojAssemblyReference.cache
+D:\MyPrograms\Printercounter\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutPrinters.cshtml.g.cs

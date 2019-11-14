@@ -71,7 +71,7 @@ namespace Printercounter
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Counters}/{action=Index}/{id?}");
             });
         }
     }

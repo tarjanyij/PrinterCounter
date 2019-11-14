@@ -8,8 +8,8 @@
 <h1>Index</h1>
 
 
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Printer)
@@ -28,20 +28,20 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date_Counter)
-                <div class="container">
-                    <div class="row">
+                <div style="width:110px;">
+                    @*<div class="row">
                         <div class='col-sm-6'>
-                            <div class="form-group">
-                                <div class='input-group date'>
-                                    <input type='text' class="form-control" id='datepicker' width="9" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
+                        <div class="form-group col-md-8">*@
+                            <div class='input-group date'>
+                                <input type='text' class="form-control" id='datepicker' />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
                             </div>
-                        </div>
-
+                        @*</div>
                     </div>
+
+                    </div>*@
                 </div>
             </th>
             <th>
@@ -54,6 +54,17 @@
         </tr>
     </thead>
     <tbody>
+        @if (Model.Count() == 0)
+        {
+       
+            <tr>
+                <td colspan="7">
+                    <p>Not found element this day yet!</p>
+                </td>
+
+            </tr>
+        }
+
         @foreach (var item in Model)
         {
             <tr>
@@ -86,12 +97,14 @@
 
             </tr>
         }
+
+
     </tbody>
 </table>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="~/css/jquery-ui.css">
 @section Scripts{
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/lib/jquery/dist/jquery-1.12.4.js"></script>
+    <script src="~/lib/jquery/dist/jquery-ui.js"></script>
     <script>
 
         $("#datepicker").datepicker({
