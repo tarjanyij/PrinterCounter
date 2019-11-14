@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
 WORKDIR /app
 
+ENV HTTP_PROXY "10.0.249.47:3128"
+
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
 RUN dotnet restore
