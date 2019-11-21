@@ -41,3 +41,4 @@ C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.dll
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.pdb
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.csproj.CopyComplete
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Counters\Monthly.g.cshtml.cs
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutPrinters.g.cshtml.cs

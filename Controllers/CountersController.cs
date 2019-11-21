@@ -43,7 +43,8 @@ namespace Printercounter.Controllers
             var counter = await (_context.PrinterCounter
                 .Include(c => c.Printer)
                 .Where(m => m.PrinterID == id)
-                .OrderByDescending(m =>m.PaperCounter)).ToListAsync();
+                .OrderByDescending(m =>m.PaperCounter)
+                .OrderByDescending(m =>m.Date_Counter)).ToListAsync();
             if (counter == null)
             {
                 return NotFound();
