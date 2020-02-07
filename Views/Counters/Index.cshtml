@@ -12,13 +12,14 @@
     <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Printer)
+                @Html.DisplayNameFor(model => model.Printer)<br>&nbsp;
+                
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Printer.PrinterBarcode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Printer.PrinterSN)
+                @Html.DisplayNameFor(model => model.Printer.PrinterSN)<br>&nbsp;
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PaperCounter)
@@ -69,7 +70,9 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Printer.PrinterName)
+                    @Html.DisplayFor(modelItem => item.Printer.PrinterName)<br>
+                    <small>@Html.DisplayFor(modelItem => item.Printer.PrinterIP)</small>
+                   
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Printer.PrinterBarcode)

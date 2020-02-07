@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -23,13 +24,15 @@ namespace Printercounter.Controllers
         {
             if (String.IsNullOrEmpty(dateList))
             { dateList = DateTime.Now.ToString("yyyy-MM-dd"); }
-           
-                var applicationDbContext = _context.PrinterCounter
+            
+            
+            var counter = await (_context.PrinterCounter
                     .Include(c => c.Printer)
-                    .Where(s => s.Date_Counter.Equals(DateTime.Parse(dateList)));
+                    .Where(s => s.Date_Counter.Equals(DateTime.Parse(dateList)))).ToListAsync();
             ViewBag.dateList = dateList;
-
-            return View(await applicationDbContext.ToListAsync());
+                      
+            if (counter == null){ return NotFound();}
+            return View( counter);
         }
 
         // GET: Counters/Details/5
@@ -55,14 +58,18 @@ namespace Printercounter.Controllers
         
         public async Task<IActionResult> Monthly(int? id, string year, string month)
         {
+            
             if (id == null)
             {
                 return NotFound();
             }
 
-            if (year == null && month == null)
+            if (year == null )
             {
                 year = DateTime.Now.ToString("yyyy");
+            }
+            if ( month == null)
+            {
                 month = DateTime.Now.ToString("MM");
             }
             var counter = await( _context.PrinterCounter
@@ -71,14 +78,40 @@ namespace Printercounter.Controllers
                 .Where(m => m.Date_Counter.Year == Int32.Parse(year))
                 .Where(m => m.Date_Counter.Month == Int32.Parse(month))).ToListAsync();
 
-            
-
             if (counter == null)
             {
                 return NotFound();
             }
-           
-            return View(counter);
+
+            List<SelectListItem> years = new List<SelectListItem>();  
+              
+                for (int i = 2019; i < 2026; i++)
+                {
+                   if (i.ToString() != year)
+                   {
+                       years.Add(new SelectListItem{Text=i.ToString(),Value=i.ToString()});  
+                   } 
+                    else
+                    {
+                      years.Add(new SelectListItem{Text=i.ToString(),Value=i.ToString(), Selected = true});
+                    }
+                }
+                // new SelectListItem{ Text="2019", Value = "2019" },  
+                // new SelectListItem{ Text="2020", Value = "2020" },  
+                // new SelectListItem{ Text="2021", Value = "2021" },  
+                // new SelectListItem{ Text="2022", Value = "2022" },  
+                // new SelectListItem{ Text="2023", Value = "2023" },  
+                // new SelectListItem{ Text="2024", Value = "2024" },  
+                // new SelectListItem{ Text="2025", Value = "2025" },  
+                // new SelectListItem{ Text="2026", Value = "2026" },  
+                 
+            
+
+           ViewBag.year = year;
+           ViewBag.month = month;
+           ViewBag.years = years;
+
+           return View(counter);
         }
         // GET: Counters/Create
         public IActionResult Create()

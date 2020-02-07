@@ -40,19 +40,39 @@
     <div class="mr-auto">
         <a asp-action="Index">Back to List</a>
     </div>
-    <div class="">
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="1">January</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="2">February</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="3">March</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="4">April</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="5">Maj</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="6">June</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="7">July</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="8">August</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="9">September</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="10">October</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="11">November</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year="2019" asp-route-month="12">December</a>&nbsp;
+    <div>
+             @Html.DropDownList("Years", (IEnumerable<SelectListItem>)ViewBag.years, new {@class="form-control-sm"})  
+          
+    </div>
+    &nbsp;
+    <div class="mount">
+        
+            @Html.ActionLink("January", "Monthly", new {year=ViewBag.year,month="1"},null) &nbsp;
+            @Html.ActionLink("February", "Monthly", new {year=ViewBag.year,month="2"},null) &nbsp;
+            @Html.ActionLink("March", "Monthly", new {year=ViewBag.year,month="3"},null) &nbsp;
+            @Html.ActionLink("April", "Monthly", new {year=ViewBag.year,month="4"},null) &nbsp;
+            @Html.ActionLink("Maj", "Monthly", new {year=ViewBag.year,month="5"},null) &nbsp;
+            @Html.ActionLink("June", "Monthly", new {year=ViewBag.year,month="6"},null) &nbsp;
+            @Html.ActionLink("July", "Monthly", new {year=ViewBag.year,month="7"},null) &nbsp;
+            @Html.ActionLink("August", "Monthly", new {year=ViewBag.year,month="8"},null) &nbsp;
+            @Html.ActionLink("September", "Monthly", new {year=ViewBag.year,month="9"},null) &nbsp;
+            @Html.ActionLink("October", "Monthly", new {year=ViewBag.year,month="10"},null) &nbsp;
+            @Html.ActionLink("November", "Monthly", new {year=ViewBag.year,month="11"},null) &nbsp;
+            @Html.ActionLink("December", "Monthly", new {year=ViewBag.year,month="12"},null) &nbsp;
+        
+        <!--<a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="1">January</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="2">February</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="3">March</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="4">April</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="5">Maj</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="6">June</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="7">July</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="8">August</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="9">September</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="10">October</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="11">November</a>&nbsp;
+        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="12">December</a>&nbsp;
+        -->
     </div>
 </div>
 <table class="table table-hover">
@@ -110,11 +130,27 @@
     <script src="~/lib/jquery/dist/jquery-1.12.4.js"></script>
     <script src="~/lib/jquery/dist/jquery-ui.js"></script>
     <script src="~/js/chartinator.js"></script>
-
+    
+    
+    
     <script type="text/javascript">
         jQuery(function ($) {
 
+              $("#Years").change(function(){
+                 var year = $("#Years").val();
+                 var url  = $("a[href*='Monthly']").attr("href");
+                 var n = url.search("year");
+                 var oldYear = url.slice(n+5,n+9)
+                 
+                $("a[href*='Monthly']")
+                    .each(function()
+                    { 
+                        this.href = this.href.replace(oldYear,year);
+                        
+                    });
 
+                 
+                });      
             //  Column Chart Example
             var chart4 = $('#columnChart').chartinator({
                 // Custom Options ------------------------------------------------------
