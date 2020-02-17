@@ -36,6 +36,7 @@ C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieCon
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutPrinters.cshtml.g.cs
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_PaginationFooterPartial.cshtml.g.cs
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs

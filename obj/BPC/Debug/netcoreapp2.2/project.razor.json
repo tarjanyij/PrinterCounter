@@ -2971,6 +2971,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_PaginationFooterPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_PaginationFooterPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Edit.cshtml",
       "TargetPath": "Views\\Counters\\Edit.cshtml",
       "FileKind": "mvc"

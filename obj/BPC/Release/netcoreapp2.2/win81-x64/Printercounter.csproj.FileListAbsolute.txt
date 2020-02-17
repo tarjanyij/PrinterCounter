@@ -48,3 +48,4 @@ C:\Prog\printercounter\obj\BPC\Release\netcoreapp2.2\win81-x64\Printercounter.Vi
 C:\Prog\printercounter\obj\BPC\Release\netcoreapp2.2\win81-x64\Printercounter.dll
 C:\Prog\printercounter\obj\BPC\Release\netcoreapp2.2\win81-x64\Printercounter.pdb
 C:\Prog\printercounter\obj\BPC\Release\netcoreapp2.2\win81-x64\Printercounter.csproj.CopyComplete
+C:\Prog\printercounter\obj\BPC\release\netcoreapp2.2\win81-x64\Razor\Views\Shared\_PaginationFooterPartial.cshtml.g.cs

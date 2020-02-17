@@ -5,21 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h3>Index</h3>
 
 
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Printer)<br>&nbsp;
+                @Html.DisplayNameFor(model => model.Printer)
                 
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Printer.PrinterBarcode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Printer.PrinterSN)<br>&nbsp;
+                @Html.DisplayNameFor(model => model.Printer.PrinterSN)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PaperCounter)
@@ -29,20 +29,13 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date_Counter)
-                <div style="width:110px;">
-                    @*<div class="row">
-                        <div class='col-sm-6'>
-                        <div class="form-group col-md-8">*@
-                            <div class='input-group date'>
-                                <input type='text' class="form-control" id='datepicker' />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        @*</div>
-                    </div>
-
-                    </div>*@
+                 <div style="width:110px;">
+                
+                    <input type='text' class="form-control form-control-sm" id='datepicker' />
+                    <span class="input-group-sm">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                           
                 </div>
             </th>
             <th>
@@ -104,6 +97,9 @@
 
     </tbody>
 </table>
+ <Partial name="_PaginationFooterPartial")/>
+
+
 <link rel="stylesheet" href="~/css/jquery-ui.css">
 @section Scripts{
     <script src="~/lib/jquery/dist/jquery-1.12.4.js"></script>

@@ -20,9 +20,25 @@ namespace Printercounter.Controllers
         }
 
         // GET: Printers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pageNumber)
         {
-            return View(await _context.Printers.ToListAsync());
+           
+            var devices = _context.Printers
+                            .OrderBy(m=>m.PrinterIP);
+            
+            if (devices == null)
+            {
+                return NotFound();
+            }
+            
+            int pageSize = 30;
+            var device = (await PaginatedList<Printer>.CreateAsync(devices.AsNoTracking(), pageNumber ?? 1, pageSize));
+            
+            ViewBag.HasNextPage = device.HasNextPage;
+            ViewBag.HasPreviousPage = device.HasPreviousPage;
+            ViewBag.pageNumber =  pageNumber;
+            ViewBag.TotalPages =device.TotalPages;
+            return View(device);
         }
 
         // GET: Printers/Details/5
@@ -35,6 +51,7 @@ namespace Printercounter.Controllers
 
             var printer = await _context.Printers
                 .FirstOrDefaultAsync(m => m.PrinterID == id);
+            
             if (printer == null)
             {
                 return NotFound();

@@ -20,39 +20,57 @@ namespace Printercounter.Controllers
         }
 
         // GET: Counters
-        public async Task<IActionResult> Index(string dateList)
+        public async Task<IActionResult> Index(string dateList ,int? pageNumber)
         {
             if (String.IsNullOrEmpty(dateList))
             { dateList = DateTime.Now.ToString("yyyy-MM-dd"); }
             
-            
-            var counter = await (_context.PrinterCounter
+                        
+            var counters = _context.PrinterCounter
                     .Include(c => c.Printer)
-                    .Where(s => s.Date_Counter.Equals(DateTime.Parse(dateList)))).ToListAsync();
-            ViewBag.dateList = dateList;
+                    .Where(s => s.Date_Counter.Equals(DateTime.Parse(dateList)));
+            
                       
-            if (counter == null){ return NotFound();}
-            return View( counter);
+            if (counters == null){ return NotFound();}
+            
+            int pageSize = 8;
+            var counter = (await PaginatedList<Counter>.CreateAsync(counters.AsNoTracking(), pageNumber ?? 1, pageSize));
+            
+            ViewBag.HasNextPage = counter.HasNextPage;
+            ViewBag.HasPreviousPage = counter.HasPreviousPage;
+            ViewBag.pageNumber =  pageNumber;
+            ViewBag.TotalPages =counter.TotalPages;
+            ViewBag.dateList = dateList;
+            
+            return View( counter.ToList());
         }
 
         // GET: Counters/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int? pageNumber)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var counter = await (_context.PrinterCounter
+            var counters = _context.PrinterCounter
                 .Include(c => c.Printer)
                 .Where(m => m.PrinterID == id)
                 .OrderByDescending(m =>m.PaperCounter)
-                .OrderByDescending(m =>m.Date_Counter)).ToListAsync();
-            if (counter == null)
+                .OrderByDescending(m =>m.Date_Counter);
+            if (counters == null)
             {
                 return NotFound();
             }
-
+            
+            int pageSize = 30;
+            var counter = (await PaginatedList<Counter>.CreateAsync(counters.AsNoTracking(), pageNumber ?? 1, pageSize));
+            
+            ViewBag.HasNextPage = counter.HasNextPage;
+            ViewBag.HasPreviousPage = counter.HasPreviousPage;
+            ViewBag.pageNumber =  pageNumber;
+            ViewBag.TotalPages =counter.TotalPages;
+            
             return View(counter);
         }
         
@@ -96,15 +114,7 @@ namespace Printercounter.Controllers
                       years.Add(new SelectListItem{Text=i.ToString(),Value=i.ToString(), Selected = true});
                     }
                 }
-                // new SelectListItem{ Text="2019", Value = "2019" },  
-                // new SelectListItem{ Text="2020", Value = "2020" },  
-                // new SelectListItem{ Text="2021", Value = "2021" },  
-                // new SelectListItem{ Text="2022", Value = "2022" },  
-                // new SelectListItem{ Text="2023", Value = "2023" },  
-                // new SelectListItem{ Text="2024", Value = "2024" },  
-                // new SelectListItem{ Text="2025", Value = "2025" },  
-                // new SelectListItem{ Text="2026", Value = "2026" },  
-                 
+                               
             
 
            ViewBag.year = year;
