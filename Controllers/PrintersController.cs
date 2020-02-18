@@ -71,7 +71,7 @@ namespace Printercounter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PrinterID,PrinterIP,PrinterName,PrinterModel,PrinterDescription,PrinterSN,PrinterBarcode,PrinterLocation,PrinterTonerName")] Printer printer)
+        public async Task<IActionResult> Create([Bind("PrinterID,PrinterIP,PrinterName,PrinterModel,PrinterDescription,PrinterSN,PrinterBarcode,PrinterLocation,PrinterTonerName,Active")] Printer printer)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace Printercounter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PrinterID,PrinterIP,PrinterName,PrinterModel,PrinterDescription,PrinterSN,PrinterBarcode,PrinterLocation,PrinterTonerName")] Printer printer)
+        public async Task<IActionResult> Edit(int id, [Bind("PrinterID,PrinterIP,PrinterName,PrinterModel,PrinterDescription,PrinterSN,PrinterBarcode,PrinterLocation,PrinterTonerName,Active")] Printer printer)
         {
             if (id != printer.PrinterID)
             {

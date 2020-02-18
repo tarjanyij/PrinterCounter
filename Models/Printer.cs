@@ -30,5 +30,7 @@ namespace Printercounter.Models
         
          [Display(Name = "Toner name" )]
         public string PrinterTonerName { get; set; }
+         
+         public bool Active { get; set; }
     }
 }

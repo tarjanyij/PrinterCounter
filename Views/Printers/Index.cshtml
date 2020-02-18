@@ -38,6 +38,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.PrinterTonerName)
                 </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.Active)
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -68,6 +71,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.PrinterTonerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.PrinterID">Edit</a> |

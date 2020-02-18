@@ -29,8 +29,9 @@ namespace Printercounter.Controllers
             var counters = _context.PrinterCounter
                     .Include(c => c.Printer)
                     .Where(s => s.Date_Counter.Equals(DateTime.Parse(dateList)));
-            
-                      
+           
+           
+                                  
             if (counters == null){ return NotFound();}
             
             int pageSize = 8;
