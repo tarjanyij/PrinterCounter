@@ -76,9 +76,25 @@
                         @Html.DisplayFor(modelItem => item.Active)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.PrinterID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.PrinterID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.PrinterID">Delete</a>
+                        <ul class="nav" style="flex-wrap: nowrap; padding-right: 0.25rem; padding-left: 0.25rem;">
+                            <li class="nav-item">
+                                <a class="nav-link" style="padding-right: 0.25rem; padding-left: 0.25rem;" asp-action="Edit" asp-route-id="@item.PrinterID">Edit</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="padding-right: 0.25rem; padding-left: 0.25rem;" asp-action="Details" asp-route-id="@item.PrinterID">Details</a>
+                            </li>
+                            <li class="nav-item">
+       
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a class="nav-link"style="padding-right: 0.25rem; padding-left: 0.25rem;" asp-action="Delete" asp-route-id="@item.PrinterID">Delete</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link disabled" style="padding-right: 0.25rem; padding-left: 0.25rem;" href="#" >Delete</a>
+                                }
+                            </li>
+                        </ul>    
                     </td>
                 </tr>
             }

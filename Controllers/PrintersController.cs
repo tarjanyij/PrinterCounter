@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -134,6 +135,7 @@ namespace Printercounter.Controllers
         }
 
         // GET: Printers/Delete/5
+        [Authorize(Roles="Admin, Manager")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -154,6 +156,7 @@ namespace Printercounter.Controllers
         // POST: Printers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles="Admin, Manager")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var printer = await _context.Printers.FindAsync(id);

@@ -1,3 +1,9 @@
+2020.02.19 Version:1.0.4
+-Add user authentication
+-Printer controller Delete action used authenticated user
+-Add printer details view counter and mounthly view link
+-Repair Printer Index view Edit Detail Delete links
+
 2020.02.18 Version:1.0.3
 - Add active field in database
 - Use active state backend process (Pcounter_sql_2.ps1)
@@ -8,3 +14,5 @@
 2020.02.05 Version:1.0.1
 - Add models "Displayname" data annotation
 - Add year selection in montly report view
+
+2019.11.15 version:1.0.0

@@ -69,5 +69,7 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.PrinterID">Edit</a> |
+    <a asp-controller="Counters" asp-action="Details" asp-route-id="@Model.PrinterID">Counters</a> |
+     <a asp-controller="Counters" asp-action="Monthly" asp-route-id="@Model.PrinterID">Monthly report</a> |
     <a asp-action="Index">Back to List</a>
 </div>
