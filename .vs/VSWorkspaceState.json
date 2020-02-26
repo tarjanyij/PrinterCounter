@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\wwwroot",
+    "\\Controllers",
+    "\\Models",
     "\\wwwroot\\css",
     "\\wwwroot\\js",
-    "\\wwwroot\\lib",
     "\\wwwroot\\lib\\bootstrap",
     "\\wwwroot\\lib\\bootstrap\\dist",
     "\\wwwroot\\lib\\bootstrap\\dist\\js",
     "\\wwwroot\\lib\\jquery",
     "\\wwwroot\\lib\\jquery\\dist"
   ],
+  "SelectedNode": "\\Controllers",
   "PreviewInSolutionExplorer": false
 }
