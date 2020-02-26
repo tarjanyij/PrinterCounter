@@ -15,6 +15,7 @@ namespace Printercounter.Data
         }
         public DbSet<Printercounter.Models.Printer> Printers { get; set; }
         public DbSet<Printercounter.Models.Counter> PrinterCounter { get; set; }
+        public DbSet<Printercounter.Models.RepairReportList> RepairReportList { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
