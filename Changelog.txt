@@ -1,3 +1,11 @@
+2020.02.28 version:1.1.0
+-Add SSO service
+
+2020.02.26 version:1.0.5
+-Add Printer RepairReportList models
+-Create RepairReportList views and controllers 
+-Repaired page numbers function on printers detail page
+
 2020.02.19 Version:1.0.4
 -Add user authentication
 -Printer controller Delete action used authenticated user

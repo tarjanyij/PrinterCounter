@@ -46,3 +46,8 @@ C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.Views.pdb
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.dll
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.pdb
 C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Printercounter.csproj.CopyComplete
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\RepairReportLists\Create.cshtml.g.cs
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\RepairReportLists\Delete.cshtml.g.cs
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\RepairReportLists\Details.cshtml.g.cs
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\RepairReportLists\Edit.cshtml.g.cs
+C:\Prog\printercounter\obj\BPC\Debug\netcoreapp2.2\Razor\Views\RepairReportLists\Index.cshtml.g.cs

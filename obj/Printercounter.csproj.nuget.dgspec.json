@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyPrograms\\printercounter\\Printercounter.csproj": {}
+    "C:\\Prog\\printercounter\\Printercounter.csproj": {}
   },
   "projects": {
-    "D:\\MyPrograms\\printercounter\\Printercounter.csproj": {
+    "C:\\Prog\\printercounter\\Printercounter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyPrograms\\printercounter\\Printercounter.csproj",
+        "projectUniqueName": "C:\\Prog\\printercounter\\Printercounter.csproj",
         "projectName": "Printercounter",
-        "projectPath": "D:\\MyPrograms\\printercounter\\Printercounter.csproj",
-        "packagesPath": "C:\\Users\\TarjanyiJ\\.nuget\\packages\\",
-        "outputPath": "D:\\MyPrograms\\printercounter\\obj\\",
+        "projectPath": "C:\\Prog\\printercounter\\Printercounter.csproj",
+        "packagesPath": "C:\\Users\\TarjanyiJ.BIROSAG\\.nuget\\packages\\",
+        "outputPath": "C:\\Prog\\printercounter\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\TarjanyiJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\TarjanyiJ.BIROSAG\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +75,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
