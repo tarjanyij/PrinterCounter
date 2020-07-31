@@ -1,6 +1,9 @@
 2020.02.28 version:1.1.0
 -Add SSO service
 
+2020.03.05 version:1.0.6
+-Add yearly report page
+
 2020.02.26 version:1.0.5
 -Add Printer RepairReportList models
 -Create RepairReportList views and controllers 
@@ -10,11 +13,11 @@
 -Add user authentication
 -Printer controller Delete action used authenticated user
 -Add printer details view counter and mounthly view link
--Repair Printer Index view Edit Detail Delete links
+-Repair Printer Index view Edit, Detail, Delete links
 
 2020.02.18 Version:1.0.3
 - Add active field in database
-- Use active state backend process (Pcounter_sql_2.ps1)
+- Use "active state" propery on backend process (Pcounter_sql_2.ps1)
 
 2020.02.11. Version:1.0.2
 - Add pagination all pages

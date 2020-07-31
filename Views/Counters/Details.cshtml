@@ -38,8 +38,9 @@
 </div>
 <div>
 
-    <a asp-action="Index">Back to List</a>&nbsp;
-    <a asp-action="Monthly" asp-route-id="@Model.First().PrinterID">Monthly report</a>
+    <a asp-controller="Counters" asp-action="Index" asp-route-dateList='@ViewBag.dateList'>Back to List</a>&nbsp;
+    <a asp-action="Monthly" asp-route-id="@Model.First().PrinterID" asp-route-dateList='@ViewBag.dateList'>Monthly report</a>
+    <a asp-action="Yearly" asp-route-id="@Model.First().PrinterID" asp-route-dateList='@ViewBag.dateList'>Yearly report</a>
 </div>
 <table class="table table-hover">
     <thead class="thead-dark">

@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\MyPrograms\\Printercounter\\Printercounter.csproj",
+  "FilePath": "c:\\Prog\\printercounter\\Printercounter.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2961,118 +2961,148 @@
   "RootNamespace": "Printercounter",
   "Documents": [
     {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\_LayoutPrinters.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutPrinters.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Printers\\Delete.cshtml",
-      "TargetPath": "Views\\Printers\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Counters\\Delete.cshtml",
-      "TargetPath": "Views\\Counters\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Printers\\Index.cshtml",
-      "TargetPath": "Views\\Printers\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Printers\\Edit.cshtml",
-      "TargetPath": "Views\\Printers\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Counters\\Create.cshtml",
-      "TargetPath": "Views\\Counters\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Counters\\Index.cshtml",
-      "TargetPath": "Views\\Counters\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\_PaginationFooterPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_PaginationFooterPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Counters\\Edit.cshtml",
-      "TargetPath": "Views\\Counters\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Printers\\Details.cshtml",
-      "TargetPath": "Views\\Printers\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Counters\\Details.cshtml",
-      "TargetPath": "Views\\Counters\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Counters\\Monthly.cshtml",
-      "TargetPath": "Views\\Counters\\Monthly.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Printers\\Create.cshtml",
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Printers\\Create.cshtml",
       "TargetPath": "Views\\Printers\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\MyPrograms\\Printercounter\\Views\\Shared\\_LoginPartial.cshtml",
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Yearly.cshtml",
+      "TargetPath": "Views\\Counters\\Yearly.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\RepairReportLists\\Delete.cshtml",
+      "TargetPath": "Views\\RepairReportLists\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Printers\\Details.cshtml",
+      "TargetPath": "Views\\Printers\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_PaginationFooterPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_PaginationFooterPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Edit.cshtml",
+      "TargetPath": "Views\\Counters\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Index.cshtml",
+      "TargetPath": "Views\\Counters\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\RepairReportLists\\Create.cshtml",
+      "TargetPath": "Views\\RepairReportLists\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\RepairReportLists\\Index.cshtml",
+      "TargetPath": "Views\\RepairReportLists\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Details.cshtml",
+      "TargetPath": "Views\\Counters\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Monthly.cshtml",
+      "TargetPath": "Views\\Counters\\Monthly.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Printers\\Delete.cshtml",
+      "TargetPath": "Views\\Printers\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\RepairReportLists\\Details.cshtml",
+      "TargetPath": "Views\\RepairReportLists\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_LayoutPrinters.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutPrinters.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Printers\\Index.cshtml",
+      "TargetPath": "Views\\Printers\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Create.cshtml",
+      "TargetPath": "Views\\Counters\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Counters\\Delete.cshtml",
+      "TargetPath": "Views\\Counters\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Printers\\Edit.cshtml",
+      "TargetPath": "Views\\Printers\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_CookieConsentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\RepairReportLists\\Edit.cshtml",
+      "TargetPath": "Views\\RepairReportLists\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Prog\\printercounter\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     }
   ],

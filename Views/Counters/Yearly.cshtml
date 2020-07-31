@@ -1,39 +1,15 @@
-﻿@model IEnumerable<Printercounter.Models.Counter>
+@model Printercounter.ViewModels.CountersYearlyReportsViewModel
 
 @{
-    ViewData["Title"] = "Monthly";
+    ViewData["Title"] = "Yearly";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Monthly</h1>
+<h1>Yearly</h1>
 
 <div>
-    <h4>Counter</h4>
+    <h4>Yearly Report</h4>
     <hr />
-
-
-
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.FirstOrDefault().Printer.PrinterName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().Printer.PrinterModel)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.FirstOrDefault().Printer.PrinterBarcode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().Printer.PrinterIP)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.FirstOrDefault().Printer.PrinterSN)
-        </dt>
-        <dt class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().Printer.PrinterLocation)
-        </dt>
-
-    </dl>
 
 </div>
 <div class="d-flex">
@@ -41,81 +17,37 @@
         <a asp-controller="Counters" asp-action="Details" asp-route-id="@ViewBag.DetailsId" asp-route-dateList="@ViewBag.dateList">Back to List</a>
     </div>
     <div>
-             @Html.DropDownList("Years", (IEnumerable<SelectListItem>)ViewBag.years, new {@class="form-control-sm"})  
+             @Html.DropDownList("Years", (IEnumerable<SelectListItem>)Model.Years, new {@class="form-control-sm"})  
           
     </div>
     &nbsp;
-    <div class="mount">
-        
-            @Html.ActionLink("January", "Monthly", new {year=ViewBag.year,month="1"},null) &nbsp;
-            @Html.ActionLink("February", "Monthly", new {year=ViewBag.year,month="2"},null) &nbsp;
-            @Html.ActionLink("March", "Monthly", new {year=ViewBag.year,month="3"},null) &nbsp;
-            @Html.ActionLink("April", "Monthly", new {year=ViewBag.year,month="4"},null) &nbsp;
-            @Html.ActionLink("Maj", "Monthly", new {year=ViewBag.year,month="5"},null) &nbsp;
-            @Html.ActionLink("June", "Monthly", new {year=ViewBag.year,month="6"},null) &nbsp;
-            @Html.ActionLink("July", "Monthly", new {year=ViewBag.year,month="7"},null) &nbsp;
-            @Html.ActionLink("August", "Monthly", new {year=ViewBag.year,month="8"},null) &nbsp;
-            @Html.ActionLink("September", "Monthly", new {year=ViewBag.year,month="9"},null) &nbsp;
-            @Html.ActionLink("October", "Monthly", new {year=ViewBag.year,month="10"},null) &nbsp;
-            @Html.ActionLink("November", "Monthly", new {year=ViewBag.year,month="11"},null) &nbsp;
-            @Html.ActionLink("December", "Monthly", new {year=ViewBag.year,month="12"},null) &nbsp;
-        
-        <!--<a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="1">January</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="2">February</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="3">March</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="4">April</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="5">Maj</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="6">June</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="7">July</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="8">August</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="9">September</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="10">October</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="11">November</a>&nbsp;
-        <a asp-controller="Counters" asp-action="Monthly" asp-route-year=ViewBag.year asp-route-month="12">December</a>&nbsp;
-        -->
-    </div>
+   
 </div>
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Date_Counter)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PaperCounter)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.DailyPaperConsumption)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TonerLevel)
-            </th>
-
+         @foreach (var item in Model.Months)
+            {
+                <th>
+                    @item
+                </th>
+                
+            }
 
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-
+        
+        <tr>
+            @foreach (var item in Model.MonthsValue)
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date_Counter)
+                    @item
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PaperCounter)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DailyPaperConsumption)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TonerLevel)
-                </td>
-
-            </tr>
-        }
+                
+            }
+        </tr>
+        
     </tbody>
 </table>
 <br />
@@ -160,21 +92,32 @@
                     { label: 'Date', type: 'string' },
                     //   {label: '2013', type: 'number'},
                     //   {label: '2014', type: 'number'},
-                    { label: 'Daily paper consumption', type: 'number' }
+                    { label: 'Monthly paper consumption', type: 'number' }
                 ],
                 // Rows - The rows data-array
                 // If colIndexes array has values the row data will be inserted into the columns
                 // defined in the colindexes array. Otherwise the row data will be appended
                 // to any existing row data extracted from an HTML table or Google Sheet
+                
                 rows: [
-                      @foreach (var item in Model)
+                        @foreach (var item in Model.MonthsValue)
                         {
-                            <text>
-                    ['@Html.DisplayFor(modelItem => item.Date_Counter)',@Html.DisplayFor(modelItem => item.DailyPaperConsumption)],
-                            </text>
+                            
+                            @if (item.Length == 0)
+                            { 
+                                <text>
+                                ['January',0], 
+                                </text>
+                            }
+                            else
+                            {
+                                <text>
+                                ['January',@item.],
+                                </text>
+                            };
 
                         }
-                 //   [' ', 0]
+                    //['Januar ', 512]
                 ],
                 // The class to apply to the table element
                 tableClass: 'col-table',

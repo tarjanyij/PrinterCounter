@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Printercounter.Data;
 using Printercounter.Models;
+using Printercounter.ViewModels;
 
 namespace Printercounter.Controllers
 {
@@ -48,7 +49,7 @@ namespace Printercounter.Controllers
         }
 
         // GET: Counters/Details/5
-        public async Task<IActionResult> Details(int? id, int? pageNumber)
+        public async Task<IActionResult> Details(int? id, string dateList,int? pageNumber)
         {
             if (id == null)
             {
@@ -72,11 +73,12 @@ namespace Printercounter.Controllers
             ViewBag.HasPreviousPage = counter.HasPreviousPage;
             ViewBag.pageNumber =  pageNumber;
             ViewBag.TotalPages =counter.TotalPages;
-            
+            ViewBag.dateList = dateList;
+
             return View(counter);
         }
         
-        public async Task<IActionResult> Monthly(int? id, string year, string month)
+        public async Task<IActionResult> Monthly(int? id, string dateList, string year, string month)
         {
             
             if (id == null)
@@ -117,13 +119,86 @@ namespace Printercounter.Controllers
                     }
                 }
                                
-            
-
+           
            ViewBag.year = year;
            ViewBag.month = month;
            ViewBag.years = years;
+           ViewBag.DetailsId = id;
+           ViewBag.dateList = dateList;
 
            return View(counter);
+        }
+        public async Task<IActionResult> Yearly(int? id, string dateList, string year)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            if (year == null )
+            {
+                year = DateTime.Now.ToString("yyyy");
+            }
+           
+            List<SelectListItem> years = new List<SelectListItem>();  
+              
+                for (int i = 2019; i < 2026; i++)
+                {
+                   if (i.ToString() != year)
+                   {
+                       years.Add(new SelectListItem{Text=i.ToString(),Value=i.ToString()});  
+                   } 
+                    else
+                    {
+                      years.Add(new SelectListItem{Text=i.ToString(),Value=i.ToString(), Selected = true});
+                    }
+                }
+           
+            var monthsList = new List<string>() {"Janary", "February", "March", "April", "Maj", "June", "July", "August", "September", "October", "November", "December"}; 
+            var monthsValueList = new List<string>();
+           
+           for (int i = 1; i < 13; i++)
+           {
+                  
+               var max = await ( _context.PrinterCounter
+                    .Include(c => c.Printer)
+                    .Where(m => m.PrinterID == id &&  m.Date_Counter.Year == Int32.Parse(year) && m.Date_Counter.Month == i)
+                    ).ToListAsync();
+                
+
+                var min = await (_context.PrinterCounter
+                    .Include(c => c.Printer)
+                    .Where(m => m.PrinterID == id &&  m.Date_Counter.Year == Int32.Parse(year) && m.Date_Counter.Month == i)
+                    ).ToListAsync(); 
+               
+               var max1 = max.Max(m =>m.PaperCounter);
+               var min1 = min.Min(m =>m.PaperCounter);
+               var counterValue = max1 - min1;
+               monthsValueList.Add(counterValue.ToString());
+              
+           }
+               var monthsValue = new List<MonthsValueViewModel>.Enumerator { Monts = monthsList, MontsValue = monthsValueList};
+            CountersYearlyReportsViewModel  CountersYearlyReportsViewModels = new CountersYearlyReportsViewModel()
+            {
+                MonthsValue = monthsValue,
+                Years = years,
+                Months = monthsList
+            };
+             if (CountersYearlyReportsViewModels == null)
+            {
+                return NotFound();
+            }
+
+            
+                               
+            
+
+           ViewBag.year = year;
+           ViewBag.years = years;
+           ViewBag.DetailsId = id;
+           ViewBag.dateList = dateList;
+
+           return  View(CountersYearlyReportsViewModels);
         }
         // GET: Counters/Create
         public IActionResult Create()
